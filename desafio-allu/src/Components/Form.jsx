@@ -26,7 +26,6 @@ class Form extends React.Component {
     event.preventDefault();
     const { addEmployee } = this.props;
     addEmployee(this.state);
-    console.log('funcionou')
   }
 
   render() {

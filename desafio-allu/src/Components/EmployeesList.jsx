@@ -8,20 +8,19 @@ class EmployeesList extends React.Component{
       employees: props.employees,
     }
     this.handleRemove = this.handleRemove.bind(this);
+    this.addEmployee = this.addEmployee.bind(this);
   }
 
   handleRemove(index) {
     const { employees } = this.state;
     const newEmployees = [...employees]
     newEmployees.splice(index, 1)
-
     this.setState({
         employees: newEmployees,
     })
 }
 
 addEmployee(estadoDoFilho) {
-  console.log('funcionou no pai')
   const { employees } = this.state;
   const newEmployees = [...employees];
   newEmployees.push(estadoDoFilho);
