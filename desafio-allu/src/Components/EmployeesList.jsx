@@ -1,4 +1,5 @@
 import React from "react";
+import Form from "./Form";
 
 class EmployeesList extends React.Component{
   constructor(props) {
@@ -17,6 +18,16 @@ class EmployeesList extends React.Component{
     this.setState({
         employees: newEmployees,
     })
+}
+
+addEmployee(estadoDoFilho) {
+  console.log('funcionou no pai')
+  const { employees } = this.state;
+  const newEmployees = [...employees];
+  newEmployees.push(estadoDoFilho);
+  this.setState({
+    employees: newEmployees,
+  });
 }
 
   render() {
@@ -50,6 +61,7 @@ class EmployeesList extends React.Component{
               )
           }
       </div>
+       <Form addEmployee={ this.addEmployee } />
     </div>
     )
   }
